@@ -1,0 +1,44 @@
+<div class="post-container">
+  <mat-card class="post-card" *ngFor="let post of posts">
+    <mat-card-header>
+      <mat-card-title>{{ post.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ post.content }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="onDeletePost(post.id)">
+        Delete
+      </button>
+      <button mat-raised-button (click)="onEditPost(post.id)">Edit</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div class="create-post-component">
+    <button mat-raised-button color="primary" (click)="toggleCreateForm()">
+      Create New Post
+    </button>
+
+    <div *ngIf="showCreateForm">
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Title"
+          [(ngModel)]="newPost.title"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea
+          matInput
+          placeholder="Content"
+          [(ngModel)]="newPost.content"
+          required
+        ></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="onCreatePost()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+
+# Node modules
+node_modules/
+
+# Compiled output
+dist/
+
+# IDE/Editor specific files
+.idea/
+.vscode/
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Environment variables
+.env
+.env.prod
+.env.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Angular specific files
+*.iml
+
+# Miscellaneous
+npm-debug.log
+yarn-error.log
+
+.angular/cache/*
+.angular/cache/**/*
+.angular/cache/**
